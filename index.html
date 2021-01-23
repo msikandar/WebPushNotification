@@ -7,7 +7,7 @@
   </head>
   <body>
     <button onclick="subscribe()">Subscribe</button>
-    
+
     <script>
       addEventListener("load", async () => {
         let sw = await navigator.serviceWorker.register("./sw.js");
@@ -22,7 +22,7 @@
             "BGvlhg3lLvSTt-wug4WNYuZfqvZF_LABcVG6y8UdkowSevE5p6fuos35XBqqyZZHlXe9X5-ipX9FOBMXUTG8hkU",
         });
 
-        const data = JSON.stringify(push);
+        const data = push;
 
         fetch("https://15727d670591.ngrok.io/endpoint", {
           method: "POST", // or 'PUT'
