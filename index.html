@@ -7,7 +7,7 @@
   </head>
   <body>
     <button onclick="subscribe()">Subscribe</button>
-    <img src="/images/d2.jpg"/>
+    
     <script>
       addEventListener("load", async () => {
         let sw = await navigator.serviceWorker.register("./sw.js");
@@ -21,6 +21,24 @@
           applicationServerKey:
             "BGvlhg3lLvSTt-wug4WNYuZfqvZF_LABcVG6y8UdkowSevE5p6fuos35XBqqyZZHlXe9X5-ipX9FOBMXUTG8hkU",
         });
+
+        const data = JSON.stringify(push);
+
+        fetch("https://15727d670591.ngrok.io/endpoint", {
+          method: "POST", // or 'PUT'
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Success:", data);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+
         console.log(JSON.stringify(push));
       }
     </script>
