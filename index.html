@@ -24,20 +24,20 @@
 
         const data = push;
 
-        fetch("https://15727d670591.ngrok.io/endpoint", {
-          method: "POST", // or 'PUT'
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log("Success:", data);
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-          });
+        // fetch("https://15727d670591.ngrok.io/endpoint", {
+        //   method: "POST", // or 'PUT'
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify(data),
+        // })
+        //   .then((response) => response.json())
+        //   .then((data) => {
+        //     console.log("Success:", data);
+        //   })
+        //   .catch((error) => {
+        //     console.error("Error:", error);
+        //   });
 
         console.log(JSON.stringify(push));
       }
