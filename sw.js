@@ -2,9 +2,9 @@ self.addEventListener("push", function (e) {
   let _data = e.data ? JSON.parse(e.data.text()) : {};
   console.log(_data);
   const options = {
+    body: _data.message,
     icon: _data.icon,
     image: _data.image,
-    body: _data.message,
     tag: _data.tag,
     actions: [
       {
