@@ -1,5 +1,5 @@
 self.addEventListener("push", function (e) {
-  console.log(e);
+  console.log(e.data.text());
   const options = {
     icon: "/images/d2.jpg",
     image: "/images/d3.jpg",
