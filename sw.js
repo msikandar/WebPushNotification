@@ -1,8 +1,11 @@
 self.addEventListener("push", function (e) {
-  console.log(e.data.text());
+  let _data = e.data ? JSON.parse(e.data.text()) : {};
+  console.log(_data);
   const options = {
-    icon: "/images/d2.jpg",
-    image: "/images/d3.jpg",
+    icon: _data.icon,
+    image: _data.image,
+    body: _data.message,
+    tag: _data.tag,
     actions: [
       {
         action: "explore",
@@ -16,5 +19,5 @@ self.addEventListener("push", function (e) {
       },
     ],
   };
-  e.waitUntil(self.registration.showNotification("Hero Image", options));
+  e.waitUntil(self.registration.showNotification(_data.title, options));
 });
